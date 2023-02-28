@@ -18,7 +18,7 @@ form.addEventListener('submit', function(event) {
   // Faire quelque chose avec les données
 })
 .catch(error => console.error(error))
-fetch('https://monapi.com/donnees', {
+fetch('http://localhost:5678/api-docs/', {
     method: 'GET'
 })
 .then(response => response.json())
