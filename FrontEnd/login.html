@@ -22,14 +22,14 @@
 	        </nav>
     </header>
 	<main>
-		<form class="login-form" id="contact">
-			<h2>Log In</h2>
-			<p>E-mail :</p>
-			<input type="email" name="email" id="email"></br>
-			<p>Mot de passe :</p>
-			<input type="password" id="password" name="password"></br>
-			<button type="submit" class="submit">Envoyer</button>
-			<a href="#"><p>Mot de passe oublié</p></a>
+		<form id="login-form">
+			<label for="username">Nom d'utilisateur:</label>
+			<input type="text" id="username" name="username" required><br>
+	
+			<label for="password">Mot de passe:</label>
+			<input type="password" id="password" name="password" required><br>
+	
+			<input type="submit" value="Se connecter">
 		</form>
 	<script src="./index.js"></script>
 	</main>

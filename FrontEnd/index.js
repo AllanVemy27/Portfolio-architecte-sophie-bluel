@@ -1,98 +1,30 @@
-//Catégorisation 
+const form = document.querySelector('#login-form');
+form.addEventListener('submit', function(event) {
+	event.preventDefault(); // empêche le formulaire de se soumettre normalement
 
+	const username = document.querySelector('#username').value;
+	const password = document.querySelector('#password').value;
 
-//Modale
-
-
-// requete fetch
-if (window.fetch) {
-    // executer requete fetch ici
-} else {
-    // lancer requete XMLHttpRequest
-}
-
-const myImage = document.querySelector('img');
-
-fetch('flowers.jpg')
-.then(function(response) {
-  return response.blob();
-})
-.then(function(myBlob) {
-  const objectURL = URL.createObjectURL(myBlob);
-  myImage.src = objectURL;
+	if (username === '' || password === '') {
+		alert('Veuillez remplir tous les champs');
+	} else if (username !== 'mon_nom_utilisateur' || password !== 'mon_mot_de_passe') {
+		alert('Nom d\'utilisateur ou mot de passe incorrect');
+	} else {
+		alert('Vous êtes connecté !');
+	}
 });
-
-var myHeaders = new Headers();
-
-var myInit = { method: 'GET',
-               headers: myHeaders,
-               mode: 'cors',
-               cache: 'default' };
-
-fetch('flowers.jpg',myInit)
-.then(function(response) {
-  return response.blob();
+.then(response => response.json())
+.then(data => {
+  // Faire quelque chose avec les données
 })
-.then(function(myBlob) {
-  var objectURL = URL.createObjectURL(myBlob);
-  myImage.src = objectURL;
-});
-
-fetch('flowers.jpg').then(function(response) {
-  if(response.ok) {
-    response.blob().then(function(myBlob) {
-      var objectURL = URL.createObjectURL(myBlob);
-      myImage.src = objectURL;
-    });
-  } else {
-    console.log('Mauvaise réponse du réseau');
-  }
+.catch(error => console.error(error))
+fetch('https://monapi.com/donnees', {
+    method: 'GET'
 })
-.catch(function(error) {
-  console.log('Il y a eu un problème avec l\'opération fetch : ' + error.message);
-});
-
-var myHeaders = new Headers();
-
-var myInit = { method: 'GET',
-               headers: myHeaders,
-               mode: 'cors',
-               cache: 'default' };
-
-var myRequest = new Request('flowers.jpg',myInit);
-
-fetch(myRequest,myInit)
-.then(function(response) {
-  return response.blob();
+.then(response => response.json())
+.then(data => {
+    // Faire quelque chose avec les données, par exemple :
+    const container = document.getElementById('container');
+    container.innerHTML = JSON.stringify(data);
 })
-.then(function(myBlob) {
-  var objectURL = URL.createObjectURL(myBlob);
-  myImage.src = objectURL;
-});
-
-var anotherRequest = new Request(myRequest,myInit);
-
-
-
-
-// Configuration formulaire
-const formEl = document.getElementById('login-form');
-console.log(formEl);
-
-formEl.addEventListener('submit',() => {
-    event.preventDefault();
-
-    const formData = new formData(formEl);
-    console.log(FormData.get('email'));
-    console.log(formData.get('password'));
-    fetch('http://localhost:5678/api/users/login', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData)
-    })
-    .then(res => res.json())
-    .then(result => console.log(result))
-    .catch(error => console.log(error));
-})
+.catch(error => console.error(error));
