@@ -13,7 +13,7 @@ form.addEventListener('submit', function(event) {
 		alert('Vous êtes connecté !');
 	}
 });
-.then(response => response.json())
+then(response => response.json())
 .then(data => {
   // Faire quelque chose avec les données
 })
