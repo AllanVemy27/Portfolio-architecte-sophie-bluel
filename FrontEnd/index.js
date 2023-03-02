@@ -62,10 +62,10 @@ fetch('http://localhost:5678/api-docs/'), {
 // Vérification des identifiants de l'utilisateur
 if (identifiantsCorrects) {
 	//Redirection vers la page d'accueil
-	window.location.replace("index.html");
+	window.location.href="index.html";
 } else {
 	// Affichage message d'erreur
-	console.log("Identifiants incorrects");
+	console.log("Erreur dans l'identifiant ou le mot de passe");
 }
 
 // Stockage du token en local
@@ -75,3 +75,42 @@ localStorage.setItem('token', 'votre_token');
 const token = localStorage.getItem('token');
 console.log(token); // Affiche "votre_token"
 
+// Définition d'un tableau contenant des catégories
+let categories = [
+	{ id: 1, name: "Tous" },
+	{ id: 2, name: "Objets" },
+	{ id: 3, name: "Appartements" },
+	{ id: 4, name: "Hôtels & restaurants"}
+  ];
+  
+  // Création d'une nouvelle catégorie
+  let newCategory = { id: 4, name: "option" };
+  
+  // Ajout de la nouvelle catégorie dans le tableau de catégories
+  categories.push(newCategory);
+  
+  // Affichage du tableau de catégories pour vérification
+  console.log(categories)
+
+
+  // obtenir les éléments HTML
+var modal = document.getElementById("myModal");
+var btn = document.getElementById("myBtn");
+var span = document.getElementsByClassName("close")[0];
+
+// ouvrir la modale lorsque l'utilisateur clique sur le bouton
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+// fermer la modale lorsque l'utilisateur clique sur la croix
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// fermer la modale lorsque l'utilisateur clique en dehors de la modale
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
