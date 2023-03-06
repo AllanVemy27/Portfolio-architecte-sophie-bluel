@@ -1,0 +1,17 @@
+{
+  "args": {
+    "sophie.bluel@test.tld": "S0phie"
+  },
+  "headers": {
+    "x-forwarded-proto": "https",
+    "x-forwarded-port": "443",
+    "host": "postman-echo.com",
+    "x-amzn-trace-id": "Root=1-6405b71e-35df27bf57d80eba2ebaafd8",
+    "eyjhbgcioijiuzi1niisinr5cci6ikpxvcj9.eyj1c2vyswqiojesimlhdci6mty1mtg3ndkzoswizxhwijoxnjuxotyxmzm5fq.jgn1p8yifr-m-5eq-ypy6ima5cka4vbfl2xmr2mghm4": "",
+    "user-agent": "PostmanRuntime/7.31.1",
+    "accept": "*/*",
+    "postman-token": "30ea9656-fc0e-44bd-91dc-f73b0045b05f",
+    "accept-encoding": "gzip, deflate, br"
+  },
+  "url": "https://postman-echo.com/get?sophie.bluel@test.tld=S0phie"
+}
