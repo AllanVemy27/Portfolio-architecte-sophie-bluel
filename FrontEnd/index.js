@@ -37,3 +37,9 @@ else if (inputEmail.velue || inputPassword.value !== true) {
 	throw new Error("Impossible d'accèder au serveur !")
 	
 }
+
+let username = true;
+if (username) {
+	console.log("Utilisateur connecté");
+	location.assign("/index.html");
+}
