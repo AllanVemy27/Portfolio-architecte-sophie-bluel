@@ -5,7 +5,7 @@ form.addEventListener('submit', function(event) {
 	const username = document.querySelector('#username').value;
 	const password = document.querySelector('#password').value;
 
-	if (username === '' || password === '') (
+	if (username === 'sophie.bluel@test.tld' || password === 'S0phie') (
 		alert('Veuillez remplir tous les champs');
 
 const response = await fetch(`http://localhost:5678/api/users/login`, {
